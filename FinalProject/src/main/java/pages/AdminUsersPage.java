@@ -6,7 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import constants.Constant;
+import utilities.PageUtility;
+
 public class AdminUsersPage {
+	PageUtility page = new PageUtility();
 	public WebDriver driver;
 
 	public AdminUsersPage(WebDriver driver)
@@ -52,12 +56,13 @@ public class AdminUsersPage {
 		adminpassword.sendKeys(pass);
 		return this;
 	}
-	public AdminUsersPage selectUserType(String type)
+	public AdminUsersPage selectUserType()
 	{
-		Select select = new Select(userType);
-		select.selectByVisibleText(type);
+		page.selecetDropDownByVisibleText(userType, Constant.USERTYPE);
+		
 		return this;
 	}
+	
 	
 
 	
@@ -92,9 +97,10 @@ public AdminUsersPage searchUsername(String user)
 
 public AdminUsersPage searchUserType(String Type)
 {
-	Select select = new Select(utype);
-	select.selectByVisibleText(Type);
-	return this ;
+	page.selecetDropDownByVisibleText(utype, Constant.USERTYPE);
+	
+	return this;
+	
 }
 
 public AdminUsersPage clicksearchIcon()

@@ -9,8 +9,8 @@ import org.openqa.selenium.support.ui.Select;
 public class PageUtility {
 	
 	// 1. Select Dropdown by Value
-    public void selectDropdownWithValue(WebElement element, String value) {
-        Select object = new Select(element);
+    public void selectDropdownWithValue(WebElement userType, String value) {
+        Select object = new Select(userType);
         object.selectByValue(value);
     }
 

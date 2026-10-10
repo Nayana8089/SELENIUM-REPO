@@ -30,7 +30,7 @@ public class Adminusertest extends TestngBase{
 	     Faker faker = new Faker();
         String adminusername=faker.name().firstName();
 	    String adminpassword=faker.internet().password();
-	    String userType=Constant.USERTYPE;
+	  //  String userType=Constant.USERTYPE;
 	    
 	    
 		LoginPage login = new LoginPage(driver);
@@ -41,7 +41,7 @@ public class Adminusertest extends TestngBase{
 		admin = home.clickAdminUsermoreinfo();
 		
 		                                                                            
-		admin.clicknew().enterUserName(adminusername).enterPassword(adminpassword).selectUserType(userType).clicksave();
+		admin.clicknew().enterUserName(adminusername).enterPassword(adminpassword).selectUserType().clicksave();
 		Assert.assertTrue(driver.getPageSource().contains(adminusername),Constant.ADMINUSERERROR);
 		
 	}

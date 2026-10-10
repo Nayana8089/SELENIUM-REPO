@@ -1,4 +1,4 @@
-package pages;
+ package pages;
 
 
 import org.openqa.selenium.WebDriver;
@@ -6,7 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.WaitUtility;
+
 public class Homepage {
+	WaitUtility wait = new WaitUtility();
+	
 	public WebDriver driver;
 	public Homepage(WebDriver driver)
 	{
@@ -33,6 +37,7 @@ public class Homepage {
 	}
 	public LoginPage clicklogout()
 	{
+		wait.waitUntilElementToBeClickable(driver, logout);
 		
 		logout.click();
 		return new LoginPage(driver);

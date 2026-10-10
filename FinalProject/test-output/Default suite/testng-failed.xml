@@ -6,8 +6,8 @@
       <class name="testscripts.Adminusertest">
         <methods>
           <include name="browserCloseAndQuit"/>
+          <include name="searchAdminUsers"/>
           <include name="initializeBrowser"/>
-          <include name="verifyUserIsAbleToAddNewUser"/>
         </methods>
       </class> <!-- testscripts.Adminusertest -->
     </classes>
